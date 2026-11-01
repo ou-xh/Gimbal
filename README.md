@@ -49,3 +49,20 @@ cbuild Gimbal.csolution.yml --active Gimbal
 CubeMX 自定义调用保留在 USER CODE 区域；自定义模块放在 Core 外。
 新加模块时需更新 Gimbal.cproject.yml 中的源码与头文件路径。
 Gimbal.uvprojx 已同步分组与路径，本次验证使用 CMSIS/AC6，未验证 uVision 构建。
+
+## 换电脑或移动工程目录
+
+请用 VS Code 打开仓库根目录（包含 `Gimbal.ioc` 的目录）。编辑器配置使用当前工作区路径或相对路径，不依赖桌面上的原工程位置。
+
+工具环境需要 ARM Compiler 6.22.0、CMSIS-Toolbox、pyOCD 和 ARM GDB；使用 VS Code 调试时，还需相应的 CMSIS、clangd 和 GDB 调试扩展。工程依赖 ARM::CMSIS 5.9.0 和 Keil::STM32F1xx_DFP 2.3.0，具体版本见 `MDK-ARM/Gimbal.cproject.yml` 和 `MDK-ARM/vcpkg-configuration.json`。
+
+克隆或移动工程后，在已激活工具环境的终端中，从仓库根目录执行：
+
+```powershell
+Set-Location MDK-ARM
+cbuild Gimbal.csolution.yml --active Gimbal
+```
+
+重新构建后应生成 `MDK-ARM/out/Gimbal/Gimbal/compile_commands.json`，供 clangd 读取当前目录下的编译参数。旧配置中指向桌面 `compile_macros_c.h` 的额外强制包含已移除，编译参数由新生成的编译数据库提供。随后在 VS Code 命令面板执行 `clangd: Restart language server`。
+
+`out`、`tmp` 和本机缓存由 `.gitignore` 排除；`Drivers`、`RTE`、启动文件、链接脚本和工程配置需要保留。固件功能、实际烧录和硬件调试仍需在安装好工具链并连接开发板后验证。

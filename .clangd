@@ -1,3 +1,7 @@
+CompileFlags:
+  CompilationDatabase: MDK-ARM/out/Gimbal/Gimbal
+
+---
 # Standalone HAL headers need base types before the HAL configuration.
 # This setting affects editor parsing only, not firmware compilation.
 If:

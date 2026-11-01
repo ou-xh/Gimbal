@@ -1,0 +1,17 @@
+# CMSIS and uVision build output. Keep source, RTE configuration and pack locks.
+/MDK-ARM/out/
+/MDK-ARM/tmp/
+/MDK-ARM/Gimbal/
+/MDK-ARM/Objects/
+/MDK-ARM/Listings/
+
+# Local editor caches and machine-specific tool discovery.
+.cache/
+/.vscode/.cache/
+/MDK-ARM/.cmsis/tools-environment.yml
+*.uvguix.*
+
+# Local secrets.
+.env
+.env.*
+!.env.example

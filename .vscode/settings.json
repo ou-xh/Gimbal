@@ -6,6 +6,6 @@
     "memory-inspector.groupings.MAUsPerGroup": 4,
     "memory-inspector.scrollingBehavior": "Auto-Append",
     "clangd.arguments": [
-        "--compile-commands-dir=c:\\Users\\oxhseu\\Desktop\\rm_test\\Gimbal\\MDK-ARM\\out\\Gimbal\\Gimbal"
+        "--compile-commands-dir=${workspaceFolder}/MDK-ARM/out/Gimbal/Gimbal"
     ]
 }
