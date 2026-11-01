@@ -1,0 +1,9 @@
+{
+    "targetSet": {
+        "MDK-ARM/Gimbal": {
+            "activeTargetType": "Gimbal"
+        }
+    },
+    "activeSolution": "../MDK-ARM/Gimbal.csolution.yml",
+    "activeTarget": "Gimbal"
+}

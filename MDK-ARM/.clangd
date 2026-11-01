@@ -1,0 +1,10 @@
+CompileFlags:
+  CompilationDatabase: c:\Users\oxhseu\Desktop\rm_test\Gimbal\MDK-ARM\out\Gimbal\Gimbal
+
+---
+If:
+  PathMatch: .*\.(c|C|h)$
+CompileFlags:
+  Add:
+    - -include
+    - c:\Users\oxhseu\Desktop\rm_test\Gimbal\MDK-ARM\out\Gimbal\Gimbal\compile_macros_c.h

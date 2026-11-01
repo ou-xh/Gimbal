@@ -1,0 +1,7 @@
+# Standalone HAL headers need base types before the HAL configuration.
+# This setting affects editor parsing only, not firmware compilation.
+If:
+  PathMatch: '(Core/Inc/stm32f1xx_hal_conf\.h|Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart\.h)'
+CompileFlags:
+  Remove: [-DUSE_HAL_DRIVER]
+  Add: [-include, stm32f1xx_hal_def.h, -include, stm32f1xx_hal.h]

@@ -1,0 +1,17 @@
+build-idx:
+  generated-by: csolution version 2.15.1+p3-gf46d68bf
+  target: Gimbal
+  csolution: Gimbal.csolution.yml
+  cbuild-run: out/Gimbal+Gimbal.cbuild-run.yml
+  tmpdir: tmp/Gimbal/default
+  cprojects:
+    - cproject: Gimbal.cproject.yml
+  cbuilds:
+    - cbuild: out/Gimbal/Gimbal/Gimbal+Gimbal.cbuild.yml
+      project: Gimbal
+      configuration: +Gimbal
+      messages:
+        info:
+          - Gimbal.cbuild-pack.yml - file is already up-to-date
+          - Gimbal+Gimbal.cbuild-run.yml - file generated successfully
+          - Gimbal+Gimbal.cbuild.yml - file generated successfully
